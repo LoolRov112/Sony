@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sony</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Delius+Swash+Caps&family=Dokdo&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Protest+Riot&family=Tilt+Prism&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+
+<body>
+  <div class="accordion" id="accordionExample" style=" background-color: #c4eceb;">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button class="accordion-button border-0 collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <span> What is the maximum resolution supported by the PlayStation 5?</span>
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The PlayStation 5 supports gaming at up to 4K resolution at 120 frames per second (FPS).
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button class="accordion-button border-0 collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <span> What type of storage technology does the PlayStation 5 use for its internal storage?</span>
+        </button>
+      </h2>
+      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The PlayStation 5 utilizes a custom SSD (Solid State Drive) for its internal storage, providing faster load
+          times and smoother gameplay experiences.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button class="accordion-button  border-0 collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <span> How much RAM does the PlayStation 5 have?</span>
+        </button>
+      </h2>
+      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The PlayStation 5 is equipped with 16 GB of GDDR6 RAM, allowing for seamless multitasking and high-performance
+          gaming.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button class="accordion-button  border-0 collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <span> What innovative feature does the PlayStation 5 controller, the DualSense, introduce?</span>
+        </button>
+      </h2>
+      <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The DualSense controller introduces haptic feedback and adaptive triggers, which offer more immersive gameplay
+          experiences by providing tactile sensations that correspond to in-game actions.
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button class="accordion-button  border-0 collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+          <span> What is the name of the advanced audio technology supported by the PlayStation 5, designed to deliver
+            3D audio effects?</span>
+        </button>
+      </h2>
+      <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+        data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+          The PlayStation 5 supports Tempest 3D AudioTech, which aims to provide immersive spatial audio for a more
+          realistic gaming experience.
+        </div>
+      </div>
+    </div>
+    <div id="theTest" style="margin-left:2em; margin-top: 1em; padding: 0.5em;">
+      <h2><a href="test.html" target="_blank" style="text-decoration: none; color: #330f0a; font-family: Oswald;">Test
+          Yourself <i class="fa-solid fa-arrow-right" style="color: #330f0a;"></i></a></h2>
+    </div>
+  </div>
+
+
+
+
+
+  <script>
+    let didTheTest = localStorage.getItem("quizCompleted");
+    if (JSON.parse(didTheTest) === true) {
+      let score = JSON.parse(localStorage.getItem("score"));
+      if (score == 100) document.getElementById("theTest").innerHTML = `<h2 style="color: white; font-family: 'Protest Riot';"">Your Score is ${score} 🥇</h2>`;
+      else
+        document.getElementById("theTest").innerHTML = `<h2 color: #330f0a; font-family: Oswald;>Your Score is ${score}</h2>`;
+    }
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

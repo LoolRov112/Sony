@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You</title>
+  <style>
+    h2 {
+      font-size: 3em;
+    }
+
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      animation: marquee 15s linear infinite;
+    }
+
+    .marquee:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .marquee-content {
+      display: inline-block;
+      margin-left: 0;
+
+    }
+
+
+    .marquee-content span {
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body bgcolor="lightblue" ondblclick="goToTheindex()">
+
+
+  <h2 id="thisName" align='center' style="margin-top: 2 em;"></h2>
+
+  <div class="marquee">
+    <div class="marquee-content">
+      <br /><br /><br /><br /><br /><br /><br />
+      <span style="font-size: 2rem;"> thank you for the submission! </span>
+      <span style="font-size: 2rem;"> thank you for the submission! </span>
+
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-content">
+      <br /><br /><br /><br /><br /><br /><br />
+      <span style="font-size: 2rem ;"> thank you for the submission! </span>
+      <span style="font-size: 2rem ;"> thank you for the submission! </span>
+
+    </div>
+  </div>
+  <script>
+    function goToTheindex() {
+      window.location.href = "../home.html";
+    }
+    let contactDetailsString = sessionStorage.getItem("contactDetails");
+    let contactDetails = JSON.parse(contactDetailsString);
+    let name = `${contactDetails.firstName}`;
+
+
+    document.getElementById("thisName").innerText = name;
+
+    const darkColors = ["#191970", "#2F4F4F", "#696969", "#708090", "#00008B", "#483D8B", "#008B8B", "#5F9EA0", "#778899", "#4682B4", "#7B68EE", "#000080"];
+
+
+    let i = 0;
+
+    setInterval(function () {
+      let titleName = document.getElementById("thisName");
+      titleName.style.color = darkColors[i];
+
+      i++;
+      if(i==darkColors.length-1) i=0
+    }, 1000);
+
+  </script>
+</body>
+
+</html>

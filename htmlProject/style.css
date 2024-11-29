@@ -1,0 +1,151 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 80%;
+}
+
+/* Nav-Bar and Footer */
+nav {
+  background: linear-gradient(
+    to right,
+    #ffffff,
+    #fffff0,
+    #d2fef6,
+    #c4eceb,
+    #49e3f0
+  );
+}
+footer {
+  background: linear-gradient(
+    to left,
+    #ffffff,
+    #fffff0,
+    #d2fef6,
+    #c4eceb,
+    #49e3f0
+  );
+}
+
+nav ul li {
+  font-size: 2rem;
+}
+
+nav ul li a {
+  font-family: Love Ya Like A Sister;
+}
+.titleLogo {
+  margin-left: 2rem;
+  font-family: Share Tech Mono;
+}
+.titleLogo:hover {
+  color: #515657;
+}
+footer ul li {
+  list-style-type: none;
+  font-family: Rubik Burned;
+  color: black;
+}
+.fa-envelope {
+  color: black;
+}
+.fa-envelope:hover {
+  color: #008b87;
+  transform: scale(1.5);
+}
+.fa-instagram {
+  color: black;
+}
+.fa-instagram:hover {
+  color: #008b87;
+  transform: scale(1.5);
+}
+.fa-facebook {
+  color: black;
+}
+.fa-facebook:hover {
+  color: #008b87;
+  transform: scale(1.5);
+}
+.fa-registered {
+  color: #008b87;
+}
+/* Nav-Bar and Footer */
+
+/* FAQ */
+.accordion {
+  margin-top: 2.5em;
+  border: 3px rgb(53, 157, 191);
+  border-radius: 25px;
+  overflow-x: hidden;
+}
+.accordion-item {
+  background-color: #d2fef6;
+}
+.accordion-button {
+  background-color: #d2fef6;
+}
+.accordion-button span {
+  font-family: Montserrat Alternates;
+  font-size: 1.8rem;
+  color: #330f0a;
+  transition: all 2s;
+}
+.accordion-button span:hover {
+  transform: scale(1.1);
+  color: #4667c0;
+  margin-left: 1.5em;
+}
+.accordion-body {
+  font-family: Love Ya Like A Sister;
+  font-size: 1.3rem;
+  color: #330f0a;
+}
+
+/* FAQ */
+
+/* media */
+.carousel {
+  margin-top: 2em;
+  height: 100%;
+}
+
+.carousel-inner .carousel-item img {
+  max-width: 100%;
+  height: 400px;
+}
+
+/* media */
+
+/* Home */
+
+.home h1 {
+  color: lightblue;
+  font-size: 3rem;
+  margin-top: 1em;
+  font-family: Montserrat Alternates;
+}
+.home p {
+  font-size: 1.5rem;
+  margin-top: 2em;
+  font-family: Montserrat Alternates;
+}
+/* Home */
+
+/* About */
+.about h1 {
+  color: lightblue;
+  font-size: 3rem;
+  margin-top: 1em;
+  font-family: Montserrat Alternates;
+}
+.about p {
+  font-size: 1.5rem;
+  margin-top: 2em;
+  font-family: Montserrat Alternates;
+}
+/* About */

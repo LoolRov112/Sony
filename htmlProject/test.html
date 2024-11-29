@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Protest+Riot&display=swap"
+        rel="stylesheet">
+    <title>Quiz</title>
+    <style>
+        * {
+            font-family: Love Ya Like A Sister;
+            overflow-x: hidden;
+            text-decoration: none;
+        }
+
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+        }
+
+        .container #questions {
+            display: flex;
+            flex-direction: row;
+            flex-flow: row wrap;
+        }
+
+        .container #questions div {
+            width: 100%;
+            margin: auto;
+            margin-bottom: 2.5em;
+        }
+
+        .container #questions li {
+            width: 40%;
+            height: 5em;
+            margin: auto;
+            margin-bottom: 5em;
+            list-style-type: none;
+            border: 2px lightblue solid;
+            line-height: 5em;
+            border-radius: 25px;
+            cursor: none;
+            transition: all 2s;
+        }
+
+        .container #questions li:hover {
+            transform: scale(1.1);
+            color: lightblue;
+            cursor: grab;
+        }
+
+
+        @media (max-width: 600px) {
+            .container #questions li {
+                width: 100%;
+            }
+        }
+    </style>
+    <script>
+
+        const quizQuestions = [
+            {
+                question: "What is the official name of Sony’s latest gaming console?",
+                options: ["PlayStation 4", "PlayStation 5", "PlayStation 6", "PlayStation X"],
+                answer: "PlayStation 5"
+            },
+            {
+                question: "Which company developed the PlayStation 5?",
+                options: ["Nintendo", "Microsoft", "Sony", "Sega"],
+                answer: "Sony"
+            },
+            {
+                question: "How much storage does the standard PlayStation 5 come with?",
+                options: ["500 GB", "1 TB", "512 GB", "825 GB"],
+                answer: "825 GB"
+            },
+            {
+                question: "What type of drive does the PlayStation 5 use for game storage?",
+                options: ["HDD (Hard Disk Drive)", "SSD (Solid State Drive)", "USB Flash Drive", "Blu-ray Disc"],
+                answer: "SSD (Solid State Drive)"
+            },
+            {
+                question: "Which of the following games is a PlayStation 5 exclusive?",
+                options: ["Call of Duty: Warzone", "Assassin's Creed Valhalla", "Demon's Souls", "Fortnite"],
+                answer: "Demon's Souls"
+            },
+            {
+                question: "What is the maximum resolution supported by the PlayStation 5?",
+                options: ["1080p", "4K", "1440p", "720p"],
+                answer: "4K"
+            },
+            {
+                question: "Which controller comes with the PlayStation 5?",
+                options: ["DualShock 4", "DualSense", "Xbox Series X Controller", "Joy-Con"],
+                answer: "DualSense"
+            },
+            {
+                question: "What is the main color theme of the PlayStation 5 console?",
+                options: ["Red", "Blue", "Black", "White"],
+                answer: "White"
+            },
+            {
+                question: "Which game showcases the PlayStation 5's ray tracing capabilities?",
+                options: ["Minecraft", "Ratchet & Clank: Rift Apart", "Super Mario Odyssey", "Grand Theft Auto V"],
+                answer: "Ratchet & Clank: Rift Apart"
+            },
+            {
+                question: "What is the release year of the PlayStation 5?",
+                options: ["2019", "2020", "2021", "2022"],
+                answer: "2020"
+            }
+        ];
+        let currentQuest = 0;
+
+        function questions() {
+            const currentQuestion = quizQuestions[currentQuest];
+            let html = `<div id="quest">${currentQuestion.question}</div>`;
+            for (let j = 0; j < currentQuestion.options.length; j++) {
+                html += `<li onclick="nextQuestion(${j})">${currentQuestion.options[j]}</li>`;
+            }
+            document.getElementById('questions').innerHTML = html;
+        }
+
+
+
+
+
+        let score = 0;
+        let quizCompleted = false;
+        function nextQuestion(optionIndex) {
+            currentQuest++;
+            if (optionIndex === quizQuestions[currentQuest - 1].options.indexOf(quizQuestions[currentQuest - 1].answer)) {
+                score += 10;
+            }
+            if (currentQuest < quizQuestions.length) {
+                questions();
+            } else {
+                quizCompleted = true;
+                if (score == 100) {
+                    document.getElementById('questions').innerHTML = `<div style="border: 1px solid #4667C0; background-color:#012622; border-radius:25px">
+                <h2>Quiz Completed!</h2> 
+                </br>
+                <h1 style="color:#D8E2DC">Wow your grade is: ${score} your knowladge about us is really great</h1>
+                </div>
+                `;
+                    document.getElementById("changeTitle").innerHTML = `The Quiz is over <a style="color:#231123" href="index.html">go back to Home</a>`
+                }
+                else if (score < 100 && score >= 75) {
+                    document.getElementById('questions').innerHTML = `<div>
+                <h2>Quiz Completed!</h2> 
+                </br>
+                <h1 style="color:black">Your grade is: <span style="color:#231123">${score} </span>not good! The questions are really easy</h1>
+                </div>`
+                    document.getElementById("changeTitle").innerHTML = `The Quiz is over <a style="color:#231123" href="index.html">go back to Home</a>`
+                }
+                else {
+                    document.getElementById('questions').innerHTML = `<div>
+                <h2>Quiz Completed!</h2> 
+                </br>
+                <h1 style="color:black">Your grade is: <span style="color:#AC3931">${score} </span> :( Worst!</h1>
+                </div>`;
+                    document.getElementById("changeTitle").innerHTML = `The Quiz is over <a style="color:#231123" href="index.html">go back to Home</a>`
+                }
+            }
+            localStorage.setItem("score", score);
+            localStorage.setItem("quizCompleted", quizCompleted)
+        }
+
+
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="changeTitle">Welcome to the quiz </h1>
+        <div id="questions">
+        </div>
+        <div style="margin: auto;">
+            <a href="index.html">Go back to home</a>
+        </div>
+    </div>
+
+    <script>
+        questions();
+        if (questions()) {
+            localStorage.setItem("quizCompleted", "true");
+        }
+    </script>
+</body>
+
+</html>

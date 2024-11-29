@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&family=Protest+Riot&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Sony</title>
+  <style>
+    * {
+      overflow-y: hidden;
+    }
+
+    h4 {
+      font-size: 2em;
+      color: black;
+      transition: all 1.5s;
+    }
+
+    h4:hover {
+      transform: scale(1.2);
+    }
+
+    @media (max-width: 600px) {
+      img {
+        width: 100%;
+      }
+    }
+
+    .container {
+      margin-top: 2em;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .con2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 600px;
+      margin-top: 4em;
+    }
+
+    .con2 h4,
+    .con2 h3 {
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body onload="swapImage()">
+  <script>
+    function detailsAbout() {
+      setInterval(function () {
+        document.getElementById("shop").innerHTML = `<p style="font-size:1.5em; font-family: 'Love Ya Like A Sister', cursive; color:#4667c0">Digital store</p>`;
+      }, 1600);
+    }
+
+    var i = 0;
+    var pics = [
+      "imgs/sony1.jpeg",
+      "imgs/sony2.jpeg",
+      "imgs/sony3.jpeg",
+      "imgs/sony4.jpeg",
+      "imgs/Ps5.jpg",
+      "imgs/Sonys.jpeg",
+      "imgs/Portal.jpg",
+      "imgs/Controller.jpg"
+    ];
+
+    function swapImage() {
+      var slide = document.getElementsByName("slide")[0];
+      slide.src = pics[i];
+      if (i < pics.length - 1) i++;
+      else i = 0;
+      setTimeout(swapImage, 1600);
+    }
+  </script>
+  <div class="container">
+    <center><img name="slide" height="300" width="500"></center>
+    <div class="con2">
+      <h4 style="height: 3em; display: flex; align-items: center; overflow: visible;">
+        <a href="Shop/shop.html" target="_blank" style="text-decoration: none;" id="shop">
+          <i class="fa-solid fa-cart-shopping" onmouseover="detailsAbout()" style="color: #8ca6ee"></i>
+        </a>
+      </h4>
+      <h3>
+        <a href="historyConsoles.html" target="_blank"
+          style="text-decoration: none; font-family: 'Protest Riot'; color: #4667c0">Go to the
+          consoles history ➡️</a>
+      </h3>
+    </div>
+  </div>
+</body>
+
+</html>
